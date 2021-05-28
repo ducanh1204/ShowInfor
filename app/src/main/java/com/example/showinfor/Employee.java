@@ -8,168 +8,167 @@ public class Employee {
 
     @SerializedName("Id")
     @Expose
-    private Integer id;
+    private Integer Id;
     @SerializedName("Photo")
     @Expose
-    private String photo;
+    private String Photo;
     @SerializedName("Finger")
     @Expose
-    private String finger;
+    private String Finger;
     @SerializedName("NameEn")
     @Expose
-    private String nameEn;
+    private String NameEn;
     @SerializedName("NameVn")
     @Expose
-    private String nameVn;
+    private String NameVn;
     @SerializedName("Gender")
     @Expose
-    private String gender;
+    private String Gender;
     @SerializedName("Bod")
     @Expose
-    private String bod;
+    private String Bod;
     @SerializedName("Country")
     @Expose
-    private String country;
+    private String Country;
     @SerializedName("Address")
     @Expose
-    private String address;
+    private String Address;
     @SerializedName("PaperType")
     @Expose
-    private String paperType;
+    private String PaperType;
     @SerializedName("PassportNumber")
     @Expose
-    private String passportNumber;
+    private String PassportNumber;
     @SerializedName("IssueDate")
     @Expose
-    private String issueDate;
+    private String IssueDate;
     @SerializedName("ExpireDate")
     @Expose
-    private String expireDate;
+    private String ExpireDate;
     @SerializedName("Cccd")
     @Expose
-    private String cccd;
+    private String Cccd;
     @SerializedName("Cmtc")
     @Expose
-    private String cmtc;
+    private String Cmtc;
 
     public Integer getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getPhoto() {
-        return photo;
+        return Photo;
     }
 
     public void setPhoto(String photo) {
-        this.photo = photo;
+        Photo = photo;
     }
 
     public String getFinger() {
-        return finger;
+        return Finger;
     }
 
     public void setFinger(String finger) {
-        this.finger = finger;
+        Finger = finger;
     }
 
     public String getNameEn() {
-        return nameEn;
+        return NameEn;
     }
 
     public void setNameEn(String nameEn) {
-        this.nameEn = nameEn;
+        NameEn = nameEn;
     }
 
     public String getNameVn() {
-        return nameVn;
+        return NameVn;
     }
 
     public void setNameVn(String nameVn) {
-        this.nameVn = nameVn;
+        NameVn = nameVn;
     }
 
     public String getGender() {
-        return gender;
+        return Gender;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        Gender = gender;
     }
 
     public String getBod() {
-        return bod;
+        return Bod;
     }
 
     public void setBod(String bod) {
-        this.bod = bod;
+        Bod = bod;
     }
 
     public String getCountry() {
-        return country;
+        return Country;
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        Country = country;
     }
 
     public String getAddress() {
-        return address;
+        return Address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        Address = address;
     }
 
     public String getPaperType() {
-        return paperType;
+        return PaperType;
     }
 
     public void setPaperType(String paperType) {
-        this.paperType = paperType;
+        PaperType = paperType;
     }
 
     public String getPassportNumber() {
-        return passportNumber;
+        return PassportNumber;
     }
 
     public void setPassportNumber(String passportNumber) {
-        this.passportNumber = passportNumber;
+        PassportNumber = passportNumber;
     }
 
     public String getIssueDate() {
-        return issueDate;
+        return IssueDate;
     }
 
     public void setIssueDate(String issueDate) {
-        this.issueDate = issueDate;
+        IssueDate = issueDate;
     }
 
     public String getExpireDate() {
-        return expireDate;
+        return ExpireDate;
     }
 
     public void setExpireDate(String expireDate) {
-        this.expireDate = expireDate;
+        ExpireDate = expireDate;
     }
 
     public String getCccd() {
-        return cccd;
+        return Cccd;
     }
 
     public void setCccd(String cccd) {
-        this.cccd = cccd;
+        Cccd = cccd;
     }
 
     public String getCmtc() {
-        return cmtc;
+        return Cmtc;
     }
 
     public void setCmtc(String cmtc) {
-        this.cmtc = cmtc;
+        Cmtc = cmtc;
     }
-
 }

@@ -2,9 +2,9 @@ package com.example.showinfor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -13,8 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvNameEn, tvNameVn, tvGender, tvBod, tvCountry, tvAddress, tvPaperType, tvPassportNumber, tvIssueDate, tvExpireDate, tvCccd, tvCmtc;
     private ImageView img;
-    private String ip = "http://192.168.44.106/";
-    private String port = "";
-
+    private String url = "http://192.168.10.128";
+    private Button btnGetData,btnAddData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,23 +44,45 @@ public class MainActivity extends AppCompatActivity {
         tvExpireDate = findViewById(R.id.tvExpireDate);
         tvCccd = findViewById(R.id.tvCccd);
         tvCmtc = findViewById(R.id.tvCmtc);
+        btnGetData = findViewById(R.id.btnGetData);
+        btnAddData = findViewById(R.id.btnAddData);
 
-        getData();
+        btnGetData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getData();
+            }
+        });
+
+        btnAddData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AddDataActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
     private void getData() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ip+port)
+                .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService retrofitService = retrofit.create(RetrofitService.class);
-        retrofitService.postData(1).enqueue(new Callback<Employee>() {
+        retrofitService.postData(19).enqueue(new Callback<Employee>() {
             @Override
             public void onResponse(Call<Employee> call, Response<Employee> response) {
-
                 if(response.body()!=null){
-                    byte[] imgBytes = Base64.decode(response.body().getPhoto(),Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(imgBytes, 0, imgBytes.length);
-                    img.setImageBitmap(bitmap);
+                    try {
+                        byte[] imgBytes = Base64.decode(response.body().getPhoto(),Base64.DEFAULT);
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(imgBytes, 0, imgBytes.length);
+                        if(bitmap==null){
+                            Toast.makeText(MainActivity.this, "Không thể tải hình ảnh", Toast.LENGTH_SHORT).show();
+                        }
+                        img.setImageBitmap(bitmap);
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Không thể tải hình ảnh", Toast.LENGTH_SHORT).show();
+                    }
                     tvNameEn.setText(response.body().getNameEn());
                     tvNameVn.setText(response.body().getNameVn());
                     tvGender.setText(response.body().getGender());
@@ -76,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
                     tvExpireDate.setText(response.body().getExpireDate());
                     tvCccd.setText(response.body().getCccd());
                     tvCmtc.setText(response.body().getCmtc());
+                }else {
+                    Toast.makeText(MainActivity.this, "Không có dữ liệu", Toast.LENGTH_SHORT).show();
                 }
 
             }

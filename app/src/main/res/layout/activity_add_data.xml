@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDataActivity">
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Lưu" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:visibility="gone"
+                android:src="@drawable/ic_img"
+                android:id="@+id/img"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+            <EditText
+                android:id="@+id/edtNameEn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NameEn" />
+
+            <EditText
+                android:id="@+id/edtNameVn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NameVn" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:checked="true"
+                    android:id="@+id/radioButton_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
+            <EditText
+                android:maxLength="10"
+                android:id="@+id/edtBod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bod" />
+
+            <EditText
+                android:maxLength="100"
+                android:id="@+id/edtCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Country" />
+
+            <EditText
+                android:maxLength="200"
+                android:id="@+id/edtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address" />
+
+            <EditText
+                android:maxLength="30"
+                android:id="@+id/edtPaperType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PaperType" />
+
+            <EditText
+                android:inputType="number"
+                android:maxLength="12"
+                android:id="@+id/edtPassportNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PassportNumber" />
+
+            <EditText
+                android:ems="10"
+                android:inputType="date"
+                android:id="@+id/edtIssueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="IssueDate" />
+
+
+            <EditText
+                android:inputType="date"
+                android:maxLength="10"
+                android:id="@+id/edtExpireDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ExpireDate" />
+
+            <EditText
+                android:inputType="number"
+                android:maxLength="12"
+                android:id="@+id/edtCccd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cccd" />
+
+            <EditText
+                android:inputType="number"
+                android:maxLength="12"
+                android:id="@+id/edtCmtc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cmtc" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
