@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddDataActivity">
+    tools:context=".Activity.AddDataActivity">
 
     <Button
         android:id="@+id/btnSave"
@@ -65,7 +65,8 @@
 
             </RadioGroup>
             <EditText
-                android:maxLength="10"
+                android:ems="10"
+                android:inputType="date"
                 android:id="@+id/edtBod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,8 +111,8 @@
 
 
             <EditText
+                android:ems="10"
                 android:inputType="date"
-                android:maxLength="10"
                 android:id="@+id/edtExpireDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
