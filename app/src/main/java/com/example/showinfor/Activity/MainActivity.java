@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +17,8 @@ import com.example.showinfor.Model.Employee;
 import com.example.showinfor.NetworkIP;
 import com.example.showinfor.R;
 import com.example.showinfor.Interface.RetrofitService;
+
+import java.io.ByteArrayOutputStream;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         btnAddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AddDataActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,AddDataActivity.class);
+//                startActivity(intent);
             }
         });
         btnGetAllData.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     Toast.makeText(MainActivity.this, "Không có dữ liệu", Toast.LENGTH_SHORT).show();
                 }
-
             }
 
             @Override
